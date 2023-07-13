@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="input-group input-group-lg">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="enter ingredients seperated by coma"
+      #ingredients
+      (keyup.enter)="getRecipes(ingredients.value)"
+    />
+    <button class="btn btn-outline-primary" type="button" id="btn" (click)="getRecipes(ingredients.value)">
+      serach for reciepes
+    </button>
+  </div>
+
+  <div class="row g-4 mt-4">
+    
+    
+
+    <div *ngFor="let reciepe of recipes" class="col-sm-6  col-md-3">
+      <div class="card h-100">
+        <img src="{{reciepe.image}}" class="card-img-top " alt="...">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{reciepe.title}}</h5>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+
+</div>
